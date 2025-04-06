@@ -54,26 +54,45 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1>;
+        };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <2 1>;
+        };
+
+        caps {
+            bindings = <&kp CAPSLOCK>;
+            key-positions = <3 2 1>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             display-name = "DEFAULT";
             bindings = <
-&kp Q  &kp W  &kp F  &kp P        &kp B        &kp J      &kp L        &kp U      &kp Y    &kp BACKSPACE
-&kp A  &kp R  &kp S  &kp T        &kp G        &kp M      &kp N        &kp E      &kp I    &kp O
-&kp Z  &kp X  &kp C  &kp D        &kp V        &kp K      &kp H        &kp COMMA  &kp DOT  &kp ENTER
-                     &lt LEF TAB  &kp ENTER    &kp SPACE  &lt RIG TAB
+&kp Q  &kp W  &kp F       &kp P         &kp B          &kp J        &kp L              &kp U      &kp Y    &kp MINUS
+&kp A  &kp R  &ht LCMD S  &ht LSHIFT T  &ht LCMD G     &ht RCMD M   &ht RIGHT_SHIFT N  &kp E      &kp I    &kp O
+&kp Z  &kp X  &kp C       &kp D         &kp V          &kp K        &kp H              &kp COMMA  &kp DOT  &lt 4 MINUS
+                          &lt LEF TAB   &lt 1 ENTER    &lt 2 SPACE  &kp BACKSPACE
             >;
         };
 
-        windows_layer {
+        number {
             display-name = "WIN";
             bindings = <
-&kp Q  &kp W       &kp E       &kp R        &kp T         &kp Y      &kp U        &kp I       &kp O       &kp P
-&kp A  &ht LALT S  &ht LGUI D  &ht LCTRL F  &kp G         &kp H      &ht RCTRL J  &ht RGUI K  &ht RALT L  &kp BSPC
-&kp Z  &kp X       &kp C       &kp V        &kp B         &kp N      &kp M        &kp COMMA   &kp DOT     &kp ENTER
-                               &lt LEF TAB  &kp LSHIFT    &kp SPACE  &lt RIG TAB
+&kp AMPERSAND  &kp ASTERISK  &kp HASH     &kp DOLLAR   &kp CARET               &kp DOT    &kp N7        &kp N8        &kp N9        &kp P
+&kp A          &ht LALT S    &kp PERCENT  &kp PLUS     &kp EQUAL               &kp H      &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp BSPC
+&kp Z          &kp X         &kp C        &kp V        &kp NON_US_BACKSLASH    &kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp ENTER
+                                          &lt LEF TAB  &kp LSHIFT              &kp SPACE  &lt RIG TAB
             >;
         };
 
