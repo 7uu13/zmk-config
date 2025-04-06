@@ -79,9 +79,9 @@
         default_layer {
             display-name = "DEFAULT";
             bindings = <
-&kp Q  &kp W  &kp F        &kp P         &kp B                 &kp J        &kp L              &kp U      &kp Y    &kp MINUS
-&kp A  &kp R  &ht LCTRL S  &ht LSHIFT T  &ht LCMD G            &ht RCMD M   &ht RIGHT_SHIFT N  &kp E      &kp I    &kp O
-&kp Z  &kp X  &kp C        &kp D         &ht LEFT_CONTROL V    &kp K        &kp H              &kp COMMA  &kp DOT  &lt 4 MINUS
+&kp Q  &kp W  &kp F        &kp P         &kp B                 &kp J        &kp L              &kp U                &kp Y    &kp MINUS
+&kp A  &kp R  &ht LCTRL S  &ht LSHIFT T  &ht LCMD G            &ht RCMD M   &ht RIGHT_SHIFT N  &ht RIGHT_CONTROL E  &kp I    &kp O
+&kp Z  &kp X  &kp C        &kp D         &ht LEFT_CONTROL V    &kp K        &kp H              &kp COMMA            &kp DOT  &lt 4 MINUS
                            &lt LEF TAB   &lt 1 ENTER           &lt 2 SPACE  &kp BACKSPACE
             >;
         };
