@@ -26,7 +26,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <220>;
+            tapping-term-ms = <180>;
             quick-tap-ms = <150>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
@@ -89,19 +89,19 @@
         number {
             display-name = "WIN";
             bindings = <
-&kp AMPERSAND  &kp ASTERISK  &kp HASH     &kp DOLLAR   &kp CARET               &kp DOT    &kp N7        &kp N8        &kp N9        &kp P
-&kp A          &ht LALT S    &kp PERCENT  &kp PLUS     &kp EQUAL               &kp H      &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp BSPC
-&kp Z          &kp X         &kp C        &kp V        &kp NON_US_BACKSLASH    &kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp ENTER
-                                          &lt LEF TAB  &kp LSHIFT              &kp SPACE  &lt RIG TAB
+&kp AMPERSAND  &kp ASTERISK  &kp HASH     &kp DOLLAR   &kp CARET               &kp DOT    &kp N7         &kp N8        &kp N9        &kp P
+&kp A          &ht LALT S    &kp PERCENT  &kp PLUS     &kp EQUAL               &kp H      &kp NUMBER_4   &kp N5        &kp NUMBER_6  &kp BSPC
+&kp Z          &kp X         &kp C        &kp V        &kp NON_US_BACKSLASH    &kp N0     &kp NUMBER_1   &kp NUMBER_2  &kp NUMBER_3  &kp ENTER
+                                          &lt LEF TAB  &kp LSHIFT              &kp SPACE  &kp BACKSPACE
             >;
         };
 
         right_layer {
             display-name = "NUM & NAVIGATION";
             bindings = <
-&kp N1   &kp N2    &kp N3     &kp N4   &kp N5     &kp N6    &kp N7     &kp N8     &kp N9     &kp N0
-&kp DEL  &kp CAPS  &kp PSCRN  &kp INS  &trans     &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans
-&trans   &trans    &trans     &trans   &trans     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &bootloader
+&kp N1   &kp N2    &kp N3     &kp N4   &kp N5     &kp HOME  &kp PAGE_DOWN  &kp PG_UP  &kp END    &kp N0
+&kp DEL  &kp CAPS  &kp PSCRN  &kp INS  &trans     &kp LEFT  &kp DOWN       &kp UP     &kp RIGHT  &trans
+&trans   &trans    &trans     &trans   &trans     &kp HOME  &kp PG_DN      &kp PG_UP  &kp END    &bootloader
                               &trans   &kp ESC    &trans    &trans
             >;
         };
