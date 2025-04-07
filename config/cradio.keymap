@@ -32,6 +32,13 @@
             bindings = <&kp>, <&kp>;
         };
 
+        new_behavior: new_behavior {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NEW_BEHAVIOR";
+            #binding-cells = <0>;
+            bindings = <&none>;
+        };
+
         mmv {
             acceleration-exponent = <1>;      // 1
             time-to-max-speed-ms = <300>;    // 40
@@ -71,6 +78,16 @@
             bindings = <&kp CAPSLOCK>;
             key-positions = <3 2 1>;
         };
+
+        cmdcopy {
+            bindings = <&kp K_COPY>;
+            key-positions = <23 22>;
+        };
+
+        cmdpaste {
+            bindings = <&kp K_PASTE>;
+            key-positions = <23 24>;
+        };
     };
 
     keymap {
@@ -79,30 +96,30 @@
         default_layer {
             display-name = "DEFAULT";
             bindings = <
-&kp Q  &kp W  &kp F        &kp P         &kp B                 &kp J        &kp L              &kp U                &kp Y    &kp MINUS
-&kp A  &kp R  &ht LCTRL S  &ht LSHIFT T  &ht LCMD G            &ht RCMD M   &ht RIGHT_SHIFT N  &ht RIGHT_CONTROL E  &kp I    &kp O
-&kp Z  &kp X  &kp C        &kp D         &ht LEFT_CONTROL V    &kp K        &kp H              &kp COMMA            &kp DOT  &lt 4 MINUS
-                           &lt LEF TAB   &lt 1 ENTER           &lt 2 SPACE  &kp BACKSPACE
+&kp Q  &kp W           &kp F        &kp P         &kp B                 &kp J        &kp L              &kp U                &kp Y            &kp MINUS
+&kp A  &ht LEFT_ALT R  &ht LCTRL S  &ht LSHIFT T  &ht LCMD G            &ht RCMD M   &ht RIGHT_SHIFT N  &ht RIGHT_CONTROL E  &ht RIGHT_ALT I  &kp O
+&kp Z  &kp X           &kp C        &kp D         &ht LEFT_CONTROL V    &kp K        &kp H              &kp COMMA            &kp DOT          &lt 4 MINUS
+                                    &lt LEF TAB   &lt 1 ENTER           &lt 2 SPACE  &kp BACKSPACE
             >;
         };
 
         number {
             display-name = "WIN";
             bindings = <
-&kp AMPERSAND  &kp ASTERISK  &kp HASH     &kp DOLLAR   &kp CARET               &kp DOT    &kp N7         &kp N8        &kp N9        &kp P
-&kp COLON      &ht LALT S    &kp PERCENT  &kp PLUS     &kp EQUAL               &kp H      &kp NUMBER_4   &kp N5        &kp NUMBER_6  &kp DELETE
-&kp Z          &kp X         &kp C        &kp V        &kp NON_US_BACKSLASH    &kp N0     &kp NUMBER_1   &kp NUMBER_2  &kp NUMBER_3  &kp ENTER
-                                          &lt LEF TAB  &kp LSHIFT              &kp SPACE  &kp BACKSPACE
+&kp AMPERSAND  &kp ASTERISK  &kp HASH     &kp DOLLAR  &kp CARET               &kp DOT    &kp N7         &kp N8        &kp N9        &none
+&kp COLON      &none         &kp PERCENT  &kp PLUS    &kp EQUAL               &none      &kp NUMBER_4   &kp N5        &kp NUMBER_6  &kp DELETE
+&kp Z          &kp X         &kp C        &kp V       &kp NON_US_BACKSLASH    &kp N0     &kp NUMBER_1   &kp NUMBER_2  &kp NUMBER_3  &none
+                                          &none       &kp LSHIFT              &kp SPACE  &kp BACKSPACE
             >;
         };
 
         right_layer {
             display-name = "NUM & NAVIGATION";
             bindings = <
-&kp N1   &kp N2    &kp N3     &kp N4   &kp N5     &kp HOME  &kp PAGE_DOWN  &kp PG_UP  &kp END    &kp N0
-&kp DEL  &kp CAPS  &kp PSCRN  &kp INS  &trans     &kp LEFT  &kp DOWN       &kp UP     &kp RIGHT  &trans
-&trans   &trans    &trans     &trans   &trans     &kp HOME  &kp PG_DN      &kp PG_UP  &kp END    &bootloader
-                              &trans   &kp ESC    &trans    &trans
+&kp N1   &kp N2    &kp N3     &kp N4   &kp N5     &kp HOME         &kp PAGE_DOWN  &kp PG_UP  &kp END    &kp N0
+&kp DEL  &kp CAPS  &kp PSCRN  &kp INS  &trans     &kp LEFT         &kp DOWN       &kp UP     &kp RIGHT  &trans
+&trans   &trans    &trans     &trans   &trans     &kp PRINTSCREEN  &kp PG_DN      &kp PG_UP  &kp END    &bootloader
+                              &trans   &kp ESC    &trans           &trans
             >;
         };
 
@@ -122,7 +139,7 @@
 &kp F1  &kp F2   &kp F3   &kp F4   &bt BT_SEL 0    &bt BT_SEL 2  &out OUT_TOG   &tog WIN        &kp C_MUTE    &kp C_PREV
 &kp F5  &kp F6   &kp F7   &kp F8   &bt BT_SEL 1    &bt BT_SEL 3  &kp C_BRI_UP   &studio_unlock  &kp C_VOL_UP  &kp C_PP
 &kp F9  &kp F10  &kp F11  &kp F12  &bt BT_CLR      &bt BT_SEL 4  &kp C_BRI_DEC  &trans          &kp C_VOL_DN  &kp C_NEXT
-                          &trans   &trans          &trans        &trans
+                          &trans   &kp GLOBE       &trans        &trans
             >;
         };
 
